@@ -233,6 +233,11 @@
             .hot-checkMore{
                 height:48px;
                 line-height:48px;
+                display: block;
+                padding: 0 0 0 54px;
+                font-size: 14px;
+                color: #655;
+                background-color: #fdfdfd;
             }
         }
     }
@@ -297,6 +302,7 @@
                         border-bottom: 1px solid #f0ebe6;
                         text-align: center;
                     }
+                   
                 }
             }
             .partnerShow{
@@ -451,11 +457,11 @@
             color: #000;
         }
     }
-    .showBookUl{
+    .showBookBox{
         border: 1px solid #ebe6e1;
         li{
             border-bottom: 1px solid #f5f2f0;
-            overflow: hidden;
+            
             p{
                 height: 43px;
                 line-height: 43px;
@@ -491,7 +497,7 @@
                     font-size: 18px;
                     font-family: arial;
                 }
-                .f-cb{
+               
                     h3{
                         line-height: 22px;
                         max-height: 44px;
@@ -507,23 +513,28 @@
                         color: #888;
                         margin-top: 5px;
                     }
-                }
+                
             }
            
         
         } 
         .checkMore{
-            height: 31px;
-            line-height: 31px;
-            font-size: 16px;
-            .iconfont{
-                font-size:10px;
-                margin-left:16px;
-            }
+            height: 33px;
+            line-height: 33px;
+            position: relative;
+            display: block;
+            padding: 0 0 0 54px;
+            font-size: 14px;
+            color: #655;
+            background-color: #fdfdfd;
+            
         }
     }
 }
 .hidden{display: none;}
 .show{display:block;}
+.cart{
+    background:  #c9483c;
+}
 
 

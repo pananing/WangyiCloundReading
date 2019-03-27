@@ -186,7 +186,12 @@
       right: 0; }
       .main-con .zhubian .hotSale .hot-checkMore {
         height: 48px;
-        line-height: 48px; }
+        line-height: 48px;
+        display: block;
+        padding: 0 0 0 54px;
+        font-size: 14px;
+        color: #655;
+        background-color: #fdfdfd; }
   .main-con .con-recommend .paperBook .pb {
     height: 325px; }
     .main-con .con-recommend .paperBook .pb li {
@@ -346,63 +351,67 @@
       font-size: 18px;
       line-height: 18px;
       color: #000; }
-  .right .showBookUl {
+  .right .showBookBox {
     border: 1px solid #ebe6e1; }
-    .right .showBookUl li {
-      border-bottom: 1px solid #f5f2f0;
-      overflow: hidden; }
-      .right .showBookUl li p {
+    .right .showBookBox li {
+      border-bottom: 1px solid #f5f2f0; }
+      .right .showBookBox li p {
         height: 43px;
         line-height: 43px;
         padding: 0 14px 0 22px;
         overflow: hidden; }
-        .right .showBookUl li p a {
+        .right .showBookBox li p a {
           height: 43px;
           line-height: 43px;
           font-size: 14px; }
-          .right .showBookUl li p a i {
+          .right .showBookBox li p a i {
             color: #aaa;
             margin-right: 16px;
             font-family: arial; }
-      .right .showBookUl li div {
+      .right .showBookBox li div {
         padding: 20px 14px 8px 20px;
         position: relative;
         height: 116px; }
-        .right .showBookUl li div img {
+        .right .showBookBox li div img {
           float: left;
           margin-left: 34px;
           margin-right: 14px;
           width: 74px;
           height: 104px; }
-        .right .showBookUl li div i {
+        .right .showBookBox li div i {
           position: absolute;
           top: 14px;
           left: 20px;
           color: #c9483c;
           font-size: 18px;
           font-family: arial; }
-        .right .showBookUl li div .f-cb h3 {
+        .right .showBookBox li div h3 {
           line-height: 22px;
           max-height: 44px;
           overflow: hidden; }
-          .right .showBookUl li div .f-cb h3 a {
+          .right .showBookBox li div h3 a {
             text-decoration: none;
             color: #333;
             outline: none;
             font-size: 16px; }
-        .right .showBookUl li div .f-cb p {
+        .right .showBookBox li div p {
           color: #888;
           margin-top: 5px; }
-    .right .showBookUl .checkMore {
-      height: 31px;
-      line-height: 31px;
-      font-size: 16px; }
-      .right .showBookUl .checkMore .iconfont {
-        font-size: 10px;
-        margin-left: 16px; }
+    .right .showBookBox .checkMore {
+      height: 33px;
+      line-height: 33px;
+      position: relative;
+      display: block;
+      padding: 0 0 0 54px;
+      font-size: 14px;
+      color: #655;
+      background-color: #fdfdfd; }
 
 .hidden {
   display: none; }
 
 .show {
   display: block; }
+
+.cart {
+  background: #c9483c; }

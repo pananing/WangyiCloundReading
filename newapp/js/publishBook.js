@@ -104,6 +104,34 @@ var changxiaobang = (function() {
 				_this.hidden();
 				$(this).children("p").addClass("hidden");
 				$(this).children("div").addClass("show");
+			
+			})
+		},
+		hidden() {
+			var $liAll = $el.children("li");
+			for(let i = 0; i < $liAll.length; i++) {
+				$liAll[i].children[0].className = "";
+				$liAll[i].children[1].className = "hidden";
+				
+			}
+		}
+	}
+
+}())
+var fenleiyuedu = (function() {
+	let $el
+	return {
+		init($ele) {
+			$el = $($ele);
+			this.event()
+		},
+		event() {
+			var _this = this;
+			$el.on("mouseenter", "li", function() {
+				
+				_this.hidden();
+				$(this).children("p").addClass("hidden");
+				$(this).children("div").addClass("show");
 				console.log($(this).children("div"))
 			})
 		},
@@ -134,17 +162,17 @@ var toTop = (function() {
 				e = e || event;
 				var doc = document.documentElement;
 				var scroll = parseInt(doc.scrollTop);
-				var $herdFix = document.querySelector(".headerFix");
+				var $herdFix = document.querySelector("#hiddenNav");
 				if(scroll > 50) {
 					$tot.style.visibility = "initial";
 				} else {
 					$tot.style.visibility = "hidden";
 				}
-				// if(scroll > 177) {
-				// 	$herdFix.style.display = "block";
-				// } else {
-				// 	$herdFix.style.display = "none";
-				// }
+				if(scroll > 177) {
+					$herdFix.style.display = "block";
+				} else {
+					$herdFix.style.display = "none";
+				}
 			}
 			$tot.onclick = function() {
 				var doc = document.documentElement;
@@ -163,20 +191,91 @@ var toTop = (function() {
 
 }())
 
-
-
-//导航隐藏
-var hiddenNav=(function(){
-	let $el;
+//合作伙伴swiper
+var partner=(function(){
+	let $el,
+	$ulDad,
+	$liAll,
+	$boxAll,
+	$boxDad;
 	return {
 		init($ele){
 			$el=$($ele);
-			
-
+			$ulDad=$el.children()[0];
+			$boxDad=$($el).children()[1];
+			$liAll=$($ulDad).children().children();
+			$boxAll=$($boxDad).children();
+			this.event();
+			this.getIndex();
+			this.getLiIndex();
 		},
 		event(){
+			var self=this;
+			$($el).on('mouseenter','li',function(){
+				$($boxAll[0]).addClass('hidden');
+				$($boxAll[this.index]).addClass('show').siblings().removeClass("show")
+				$($liAll[this.index]).addClass('cart').siblings().removeClass("cart")
+				console.log($($boxAll[this.index]).siblings())
+			})
 
+		},
+		getIndex(num=0){
+			$boxAll.each(function(i){
+				$boxAll[i].index=num;
+				num++;
+			
+			})
+		},
+		getLiIndex(number=0){
+			$liAll.each(function(i){
+				$liAll[i].index=number;
+				number++;
+		
+			})
 		}
-
 	}
-})
+}())
+
+//点击其他出现隐藏文字
+var hiddenOther=(function(){
+	let $el,
+	$otherLi,
+	$liAll,
+	$search;
+	return {
+		init($ele){
+			$el=$($ele);
+			$otherLi=$el.children('.hv-ul').children('.other');
+			$liAll=$el.children('.hv-ul').children('.otherLi');
+			$search=$el	.children('.hv-search')
+			console.log($search)
+			this.event();
+		},
+		event(){
+			var self=this;
+			$el.on('mouseenter','.other',function(){
+				
+				self.getShow()
+			});
+			$el.on('mouseleave',$otherLi,function(){
+				self.getHidden()
+			})
+		},
+		getShow(){
+			$liAll.each(function(i){
+				$($liAll[i]).removeClass('hidden').addClass('show')
+			});
+			$otherLi.removeClass('show').addClass('hidden');
+			$search.addClass('hidden').removeClass('show');
+			
+		},
+		getHidden(){
+			$liAll.each(function(i){
+				$($liAll[i]).removeClass('show').addClass('hidden')
+			});
+			$otherLi.removeClass('hidden').addClass('show');
+			$search.addClass('show').removeClass('hidden')
+			
+		},
+	}
+}())
